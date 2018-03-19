@@ -4,9 +4,12 @@ import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.reducing;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.NavigableMap;
 import java.util.TreeMap;
 
 import timeTracker.ActiveTask;
@@ -17,6 +20,7 @@ import timeTracker.Tracker;
 public class TrackerService extends SavedData {
 	private Tracker tracker;
 	private ActiveTask active;
+	private  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/YYYY HH:mm:ss");
 	
 	public TrackerService() {
 		active = new ActiveTask();
@@ -24,13 +28,34 @@ public class TrackerService extends SavedData {
 	}
 	
 	public List<Task> getTrackedTasks(List<Task>taskList) {
-		List<Task> result = new ArrayList<Task>();
-		result.addAll(Tracker.getAllTracked(taskList));
+		
+		System.out.println(LocalDateTime.now().format(formatter)+" entering getTrackedTasks");
+		//List<Task> result = new ArrayList<Task>();
+		//result.addAll(Tracker.getAllTracked(taskList));
+		
 		Task activeTask = active.getActive();
-		if (activeTask != null) {
-			result.set(activeTask.getId()-1, activeTask);
+		
+		if(null == activeTask) {
+			System.out.println(LocalDateTime.now().format(formatter)+" active task file was empty. trying again...");
+			activeTask = active.getActive();
 		}
-		return result;
+		
+		if (activeTask != null) {
+			System.out.println(LocalDateTime.now().format(formatter)+" found active task in the tmp file. Looking for a match in the taskList");
+			Collections.sort(taskList);
+			//using an index counter, rather than relying on the taskId, in case the file isn't sorted ascending. 
+			//this ensures that the active task is placed correctly back in the list regardless of sort 
+			int i = -1; 
+			for(Task t : taskList) {//using a for-loop instead of stream. sometimes it's just better that way
+				i++;
+				if(activeTask.getId() == t.getId()) {
+					System.out.println(LocalDateTime.now().format(formatter)+" setting active task at index: "+i);
+					taskList.set(i, activeTask);
+				}
+			}
+		}
+		System.out.println(LocalDateTime.now().format(formatter)+" exiting getTrackedTasks");
+		return taskList;
 	}
 
 	public boolean startTask(Task task) {
@@ -55,7 +80,7 @@ public class TrackerService extends SavedData {
 		return task.isStarted();
 	}
 
-	public TreeMap<LocalDateTime, Map<String, Double>> getTaskHistoryByProject() {
+	public NavigableMap<LocalDateTime, Map<String, Double>> getTaskHistoryByProject() {
 		TreeMap<LocalDateTime, Map<String, Double>> sortedTasksByDay = new TreeMap<LocalDateTime, Map<String, Double>>();
 		List<Task> taskSummaryList = new ArrayList<Task>();
 		taskSummaryList = tracker.getSavedTasks();
@@ -64,14 +89,15 @@ public class TrackerService extends SavedData {
 		}		
 		Map<LocalDateTime, Map<String, Double>> tasksByDay = taskSummaryList.stream()
 				.sorted()
+				.filter(t ->t.getStartDay().isAfter(LocalDateTime.now().minusDays(32L)))
 				.collect(groupingBy(Task::getStartDay,
 						groupingBy(Task::getProject,
 								reducing(0.0, Task::getTimeSpentAsDouble, Double::sum))));
 		sortedTasksByDay.putAll(tasksByDay);
-		return sortedTasksByDay;
+		return sortedTasksByDay.descendingMap();
 	}
 
-	public TreeMap<LocalDateTime, Map<String, Double>> getTaskHistoryByJira() {
+	public NavigableMap<LocalDateTime, Map<String, Double>> getTaskHistoryByJira() {
 		TreeMap<LocalDateTime, Map<String, Double>> sortedTasksByDay = new TreeMap<LocalDateTime, Map<String, Double>>();
 		List<Task> taskSummaryList = new ArrayList<Task>();
 		taskSummaryList = tracker.getSavedTasks();
@@ -80,11 +106,12 @@ public class TrackerService extends SavedData {
 		}
 		Map<LocalDateTime, Map<String, Double>> tasksByDay = taskSummaryList.stream()
 				.sorted()
+				.filter(t ->t.getStartDay().isAfter(LocalDateTime.now().minusDays(32L)))
 				.collect(groupingBy(Task::getStartDay,
 						groupingBy(Task::getProjectAndTask,
 								reducing(0.0, Task::getTimeSpentAsDouble, Double::sum))));
 		sortedTasksByDay.putAll(tasksByDay);
-		return sortedTasksByDay;
+		return sortedTasksByDay.descendingMap();
 	}
 	
 }

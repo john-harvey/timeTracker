@@ -4,6 +4,8 @@ import java.io.File;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.WebResourceSet;
@@ -14,7 +16,8 @@ import org.apache.catalina.webresources.EmptyResourceSet;
 import org.apache.catalina.webresources.StandardRoot;
 
 public class Main {
-
+	private  static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/YYYY HH:mm:ss");
+	
     private static File getRootFolder() {
         try {
             File root;
@@ -25,7 +28,7 @@ public class Main {
             } else {
                 root = new File(runningJarPath.substring(0, lastIndexOf));
             }
-            System.out.println("application resolved root folder: " + root.getAbsolutePath());
+            System.out.println(LocalDateTime.now().format(formatter)+" application resolved root folder: " + root.getAbsolutePath());
             return root;
         } catch (URISyntaxException ex) {
             throw new RuntimeException(ex);
@@ -50,7 +53,7 @@ public class Main {
         //Set execution independent of current thread context classloader (compatibility with exec:java mojo)
         ctx.setParentClassLoader(Main.class.getClassLoader());
 
-        System.out.println("configuring app with basedir: " + webContentFolder.getAbsolutePath());
+        System.out.println(LocalDateTime.now().format(formatter)+" configuring app with basedir: " + webContentFolder.getAbsolutePath());
 
         // Declare an alternative location for your "WEB-INF/classes" dir
         // Servlet 3.0 annotation will work
@@ -60,7 +63,7 @@ public class Main {
         WebResourceSet resourceSet;
         if (additionWebInfClassesFolder.exists()) {
             resourceSet = new DirResourceSet(resources, "/WEB-INF/classes", additionWebInfClassesFolder.getAbsolutePath(), "/");
-            System.out.println("loading WEB-INF resources from '" + additionWebInfClassesFolder.getAbsolutePath() + "'");
+            System.out.println(LocalDateTime.now().format(formatter)+" loading WEB-INF resources from '" + additionWebInfClassesFolder.getAbsolutePath() + "'");
         } else {
             resourceSet = new EmptyResourceSet(resources);
         }

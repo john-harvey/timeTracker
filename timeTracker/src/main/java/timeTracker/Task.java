@@ -1,14 +1,8 @@
 package timeTracker;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Base64;
-import java.util.function.Predicate;
 
 public class Task implements Comparable<Task> {
 	private static final String NULL = "null";
@@ -16,6 +10,7 @@ public class Task implements Comparable<Task> {
 	private String project;
 	private String jiraTask;
 	private boolean started;
+	private boolean current=true;
 	private LocalDateTime start;
 	private LocalDateTime end;
 	private String startButtonText = "Start";
@@ -41,11 +36,12 @@ public class Task implements Comparable<Task> {
 		this.id = Integer.parseInt(fields[0]);
 		this.project = fields[1];
 		this.jiraTask = fields[2];
-		if (fields.length > 3) {
+		this.current = ("true".equalsIgnoreCase(fields[3]));
+		if (fields.length > 4) {
 			// assumes these come from reading in timeTracking.txt or activeTask.tmp
-			this.start = LocalDateTime.parse(fields[3]);
-			if (!fields[4].equals(NULL)) {
-				this.end = LocalDateTime.parse(fields[4]);
+			this.start = LocalDateTime.parse(fields[4]);
+			if (!fields[5].equals(NULL)) {
+				this.end = LocalDateTime.parse(fields[5]);
 			}
 		}
 	}
@@ -132,6 +128,14 @@ public class Task implements Comparable<Task> {
 		this.started = started;
 	}
 
+	public boolean getCurrent() {
+		return current;
+	}
+
+	public void setCurrent(boolean current) {
+		this.current = current;
+	}
+
 	public LocalDateTime getStart() {
 		return start;
 	}
@@ -162,6 +166,9 @@ public class Task implements Comparable<Task> {
 		this.end = end;
 	}
 
+	public boolean isRegularTask() {
+		return !(this.getProject().equalsIgnoreCase("new task:project"));
+	}
 	
 	public Long getTimeSpent() {
 		Long time = 0L;
@@ -182,13 +189,14 @@ public class Task implements Comparable<Task> {
 			timeSpent = new Double(java.time.Duration.between(getStart(), LocalDateTime.now()).toMillis()) / 1000 / 60
 					/ 60;
 		}
+		timeSpent = (double) (Math.round(timeSpent*4)/4f);
 		return timeSpent;
 	}
 
 	@Override
 	public String toString() {
 		// formatted for output to a csv file
-		return id + "," + project + "," + jiraTask + "," + start + "," + end;
+		return id + "," + project + "," + jiraTask + "," + current + "," + start + "," + end;
 	}
 	
 	public String getUrlId() {
@@ -201,11 +209,13 @@ public class Task implements Comparable<Task> {
 
 	public String saveString() {
 		// formatted for tasks file
-		return id + "," + project + "," + jiraTask;
+		return id + "," + project + "," + jiraTask + "," + current;
 	}
 
 	@Override
 	public int compareTo(Task t1) {
-		return this.id>t1.id?0:-1;
+		int result = 0;
+		result = this.id>t1.id?1:0;
+		return result;
 	}
 }

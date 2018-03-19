@@ -1,13 +1,18 @@
 package timeTracker;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class ActiveTask extends SavedData {
 	private static final String ACTIVE_TASK_FILE = "/activeTask.tmp";
 	private Task currentTask = null;
+	private  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/YYYY HH:mm:ss");
 	
 	public ActiveTask() {
-		loadActive();
+		System.out.println(LocalDateTime.now().format(formatter)+" entering ActiveTask constructor");
+		//System.out.println(LocalDateTime.now().format(formatter)+" calling loadActive");
+		//loadActive();
 	}
 	
 	public Task startTask(Task starter) {
@@ -23,7 +28,9 @@ public class ActiveTask extends SavedData {
 	}
 	
 	private void loadActive() {
+		System.out.println(LocalDateTime.now().format(formatter)+" entering ActiveTask.loadActive");
 		if (doesFileExist(ACTIVE_TASK_FILE)) {
+			System.out.println(LocalDateTime.now().format(formatter)+" calling SavedData.loadTasks");
 			List<Task> activeTasks = loadTasks(ACTIVE_TASK_FILE);
 			if (activeTasks.size() > 0) {
 				currentTask = activeTasks.get(0);
@@ -33,6 +40,7 @@ public class ActiveTask extends SavedData {
 				currentTask = null;
 			}
 		}
+		System.out.println(LocalDateTime.now().format(formatter)+" exiting ActiveTask.loadActive");
 	}
 
 	public Task getActive() {

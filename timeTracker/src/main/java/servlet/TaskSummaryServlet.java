@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import service.TrackerService;
-import timeTracker.Task;
 
 @WebServlet(name = "TaskSummaryServlet", urlPatterns = { "/summary" })
 
