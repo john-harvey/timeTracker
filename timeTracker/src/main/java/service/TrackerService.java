@@ -3,14 +3,21 @@ package service;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.reducing;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.temporal.ChronoField;
+import java.time.temporal.TemporalAccessor;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.NavigableMap;
 import java.util.TreeMap;
+
+import javax.swing.text.DateFormatter;
 
 import timeTracker.ActiveTask;
 import timeTracker.SavedData;
@@ -21,6 +28,7 @@ public class TrackerService extends SavedData {
 	private Tracker tracker;
 	private ActiveTask active;
 	private  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/YYYY HH:mm:ss");
+	private  DateTimeFormatter dayFormatter=DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSX");
 	
 	public TrackerService() {
 		active = new ActiveTask();
@@ -80,16 +88,17 @@ public class TrackerService extends SavedData {
 		return task.isStarted();
 	}
 
-	public NavigableMap<LocalDateTime, Map<String, Double>> getTaskHistoryByProject() {
+	public NavigableMap<LocalDateTime, Map<String, Double>> getTaskHistoryByProject(LocalDateTime startDate) {
 		TreeMap<LocalDateTime, Map<String, Double>> sortedTasksByDay = new TreeMap<LocalDateTime, Map<String, Double>>();
 		List<Task> taskSummaryList = new ArrayList<Task>();
 		taskSummaryList = tracker.getSavedTasks();
 		if (active.getActive() != null) {
 			taskSummaryList.add(active.getActive());
-		}		
+		}
+		
 		Map<LocalDateTime, Map<String, Double>> tasksByDay = taskSummaryList.stream()
 				.sorted()
-				.filter(t ->t.getStartDay().isAfter(LocalDateTime.now().minusDays(32L)))
+				.filter(t ->t.getStartDay().isAfter(startDate.minusDays(1L)))
 				.collect(groupingBy(Task::getStartDay,
 						groupingBy(Task::getProject,
 								reducing(0.0, Task::getTimeSpentAsDouble, Double::sum))));
@@ -97,21 +106,40 @@ public class TrackerService extends SavedData {
 		return sortedTasksByDay.descendingMap();
 	}
 
-	public NavigableMap<LocalDateTime, Map<String, Double>> getTaskHistoryByJira() {
+	public NavigableMap<LocalDateTime, Map<String, Double>> getTaskHistoryByJira(LocalDateTime startDate) {
 		TreeMap<LocalDateTime, Map<String, Double>> sortedTasksByDay = new TreeMap<LocalDateTime, Map<String, Double>>();
 		List<Task> taskSummaryList = new ArrayList<Task>();
 		taskSummaryList = tracker.getSavedTasks();
 		if (active.getActive() != null) {
 			taskSummaryList.add(active.getActive());
 		}
+
 		Map<LocalDateTime, Map<String, Double>> tasksByDay = taskSummaryList.stream()
 				.sorted()
-				.filter(t ->t.getStartDay().isAfter(LocalDateTime.now().minusDays(32L)))
+				.filter(t ->t.getStartDay().isAfter(startDate.minusDays(1L)))
 				.collect(groupingBy(Task::getStartDay,
-						groupingBy(Task::getProjectAndTask,
+						groupingBy(Task::getProjectTaskAndJiraLink,
 								reducing(0.0, Task::getTimeSpentAsDouble, Double::sum))));
 		sortedTasksByDay.putAll(tasksByDay);
 		return sortedTasksByDay.descendingMap();
+	}
+	
+	public NavigableMap<String, Map<LocalDateTime, Double>> getDailyTotalsByJira(LocalDateTime startDate) {
+		TreeMap<String, Map<LocalDateTime, Double>> sortedTasksByDay = new TreeMap<String, Map<LocalDateTime, Double>>();
+		List<Task> taskSummaryList = new ArrayList<Task>();
+		taskSummaryList = tracker.getSavedTasks();
+		if (active.getActive() != null) {
+			taskSummaryList.add(active.getActive());
+		}
+
+		Map<String, Map<LocalDateTime, Double>> tasksByDay = taskSummaryList.stream()
+				.sorted()
+				.filter(t ->t.getStartDay().isAfter(startDate.minusDays(1L)))
+				.collect(groupingBy(Task::getProjectTaskAndJiraLink,
+						groupingBy(Task::getStartDay,
+								reducing(0.0, Task::getTimeSpentAsDouble, Double::sum))));
+		sortedTasksByDay.putAll(tasksByDay);
+		return sortedTasksByDay;
 	}
 	
 }

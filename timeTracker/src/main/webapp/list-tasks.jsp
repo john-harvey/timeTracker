@@ -50,8 +50,8 @@
 									<thead>
 										<tr style="padding: 0.2rem;">
 											<th>#</th>
-											<th style="width: 20%;">Project</th>
-											<th style="width: 65%;">Jira Task</th>
+											<th style="width: 30%;">Project</th>
+											<th style="width: 55%;">Jira Task</th>
 											<th  style="width: 15%;" colspan="3">Actions</th>
 										</tr>
 									</thead>

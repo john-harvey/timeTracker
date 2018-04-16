@@ -3,6 +3,8 @@ package timeTracker;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Base64;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Task implements Comparable<Task> {
 	private static final String NULL = "null";
@@ -14,8 +16,8 @@ public class Task implements Comparable<Task> {
 	private LocalDateTime start;
 	private LocalDateTime end;
 	private String startButtonText = "Start";
-	private String JIRA_URL_BASE = "https://gcjiramain.unisysdevops.com/browse/";
-	private String JIRA_DASHBOARD_URL = "https://gcjiramain.unisysdevops.com/secure/Dashboard.jspa";
+	private String JIRA_URL_BASE = "http://bjcjira/browse/";
+	private String JIRA_DASHBOARD_URL = "http://bjcjira/secure/Dashboard.jspa";
 	
 	public String getStartButtonText() {
 		return startButtonText;
@@ -48,8 +50,12 @@ public class Task implements Comparable<Task> {
 
 	public Task() {
 	}
+	
+	public Task getInstance() {
+		return this;
+	}
 
-	public void start() {
+ 	public void start() {
 		this.setEnd(null);
 		this.setStart(LocalDateTime.now());
 		this.setStarted(true);
@@ -84,7 +90,10 @@ public class Task implements Comparable<Task> {
 
 	public String getJiraLink() {
 		String linkValue = "";
-		String jiraTaskValue = jiraTask.substring(0, jiraTask.contains("-")?jiraTask.contains(" ")?jiraTask.indexOf(" "):jiraTask.length():0);
+		Pattern p = Pattern.compile("^([A-Za-z0-9]+(-[0-9]+ ))");
+		Matcher m = p.matcher(jiraTask);
+		String jiraTaskValue = m.find()?m.group(1):"";
+		System.out.println("jiraTaskValue from regex: "+jiraTaskValue);
 		if(null != jiraTaskValue && !"".equals(jiraTaskValue)) {
 			linkValue=JIRA_URL_BASE+jiraTaskValue;
 //			boolean isInvalidTask = false;
@@ -110,6 +119,10 @@ public class Task implements Comparable<Task> {
 			linkValue = JIRA_DASHBOARD_URL;
 		}
 		return linkValue;
+	}
+	
+	public String getProjectTaskAndJiraLink() {
+		return project + "~" + jiraTask+"^"+getJiraLink();
 	}
 	
 	public String getProjectAndTask() {
