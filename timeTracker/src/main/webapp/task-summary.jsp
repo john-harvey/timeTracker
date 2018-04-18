@@ -26,7 +26,10 @@
 		    	document.listSummaryForm.submit();
 		    });		
 		})
-			
+
+		function updateTotals(){
+
+		}
     </script>
     <body>          
         <div class="container" style="margin-left: 50px">
@@ -74,11 +77,11 @@
 													${fn:split(fn:substringAfter(task.key,'~'), '^')[0]}
 												</a>
 											</div>
-											<c:forEach var="weekDate" items="${weekDates}">
+											<c:forEach var="weekDate" items="${weekDates}" varStatus="dayNumber">
 												<c:set var="matched" value='false'></c:set>
 												<c:forEach var="day" items="${task.value}">
 													 	<c:if test="${weekDate == fn:substringBefore(day.key,'T')}">
-													 		<div class="${weekDate}" style="display: inline-block; width:90px;">${day.value}</div>
+													 		<div class="${dayNumber.count}_time" style="display: inline-block; width:90px;">${day.value}</div>
 													 		<c:set var="taskTotal" value="${taskTotal+day.value}"></c:set>
 													 		<c:set var="matched" value='true'></c:set>
 													 	</c:if>	
@@ -92,10 +95,10 @@
 							   </div>  
 							</c:forEach>
 							<div style="display: inline-block; width:600px;"><strong>Daily Totals:</strong></div>
-						   <c:forEach var="weekDate" items="${weekDates}">
-						  		<div style="display: inline-block; width:90px;"><input type="text" name="${weekDate}_Total" readonly style="border: none;"/></div>  
+						   <c:forEach var="weekDate" items="${weekDates}" varStatus="dayNumber">
+						  		<div style="display: inline-block; width:90px;"><input type="text" name="${dayNumber.count}_total" readonly style="border: none;"/></div>
 						  </c:forEach>
-						  <div style="display: inline-block; width:90px;"><input type="text" name="grand_Total" readonly style="border: none;"/></div>							
+						  <div style="display: inline-block; width:90px;"><input type="text" name="grand_total" readonly style="border: none;"/></div>
 						 </div> 	  
                     </c:when>                    
                     <c:otherwise>
@@ -112,7 +115,7 @@
    <div class="panel panel-default" style="margin-right: 50px;">
    		<div class="panel-heading">
 			<h4 class="panel-title">
-				<a data-toggle="collapse" href="#collapseSpreadsheet">Summary Detail</a>
+				<a data-toggle="collapse" href="#collapseSpreadsheet">Summary Details</a>
 			</h4>
 		</div>      
          <div id="collapseSpreadsheet" class="table-responsive panel-collapse collapse" style="margin-left: 50px;">                                     

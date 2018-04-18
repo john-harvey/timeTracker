@@ -41,9 +41,9 @@ public class TaskSummaryServlet extends HttpServlet {
 				startDate = LocalDate.now();
 			}
 		}
-		req.setAttribute("startDate", startDate);
-		req.setAttribute("weekDates", getWeekDates(startDate));
-		LocalDateTime filterDate = startDate.atStartOfDay();
+		LocalDateTime filterDate = (DayOfWeek.SUNDAY.equals(startDate.getDayOfWeek()))?startDate.atStartOfDay():startDate.with(TemporalAdjusters.previous(DayOfWeek.SUNDAY)).atStartOfDay();
+		req.setAttribute("startDate", filterDate.toLocalDate());
+		req.setAttribute("weekDates", getWeekDates(filterDate.toLocalDate()));
 		forwardListTasks(req, resp, trackerService.getTaskHistoryByProject(filterDate), trackerService.getTaskHistoryByJira(filterDate), trackerService.getDailyTotalsByJira(filterDate));
 	}
 
@@ -65,10 +65,8 @@ public class TaskSummaryServlet extends HttpServlet {
 	
 	private List<String> getWeekDates(LocalDate startDate){
 		List<String>weekDates = new ArrayList<String>();
-		boolean test = DayOfWeek.SUNDAY.equals(startDate.getDayOfWeek());
-		LocalDate weekDay = (DayOfWeek.SUNDAY.equals(startDate.getDayOfWeek()))?startDate:startDate.with(TemporalAdjusters.previous(DayOfWeek.SUNDAY));
 		for(int i=0; i<7;i++) {
-			weekDates.add(weekDay.plusDays(i).toString());
+			weekDates.add(startDate.plusDays(i).toString());
 		}
 		return weekDates;
 	}
