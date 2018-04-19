@@ -24,11 +24,28 @@
 		    	// var $input = $(this).find("input[name=submittedDate]");
 		    	//console.log("new date selected: "+$input.val());
 		    	document.listSummaryForm.submit();
-		    });		
+		    });	
+		    
+		    updateTotals();
 		})
 
 		function updateTotals(){
-
+			console.log("updating totals...");
+			for(i=1;i<=7;i++){
+				var dailyTotal = 0;
+				var dailyValues = document.getElementsByClassName(i+"_time");
+				Array.prototype.forEach.call(dailyValues,function(element){
+					dailyTotal += Number(element.innerText);
+				})
+				document.getElementsByClassName(i+"_total")[0].innerText = dailyTotal;
+			}
+			
+			var grandTotal = 0;
+			var taskTotals = document.getElementsByClassName("taskTotal");
+			Array.prototype.forEach.call(taskTotals,function(element){
+				grandTotal += Number(element.innerText);
+			})
+			document.getElementsByClassName("grand_total")[0].innerText = grandTotal;
 		}
     </script>
     <body>          
@@ -90,15 +107,15 @@
 													<div  style="display: inline-block; width:90px;">0.0</div>	
 												</c:if> 
 											</c:forEach>
-												<div  style="display: inline-block; width:90px;"><strong>${taskTotal}</strong></div>
+												<div class="taskTotal" style="display: inline-block; width:90px; font-weight: bold;">${taskTotal}</div>
 									</div>           
 							   </div>  
 							</c:forEach>
-							<div style="display: inline-block; width:600px;"><strong>Daily Totals:</strong></div>
+							<div style="display: inline-block; width:620px; font-weight: bold;">Daily Totals:</div>
 						   <c:forEach var="weekDate" items="${weekDates}" varStatus="dayNumber">
-						  		<div style="display: inline-block; width:90px;"><input type="text" name="${dayNumber.count}_total" readonly style="border: none;"/></div>
+						  		<div class="${dayNumber.count}_total" style="display: inline-block; width:90px; font-weight: bold;"></div>
 						  </c:forEach>
-						  <div style="display: inline-block; width:90px;"><input type="text" name="grand_total" readonly style="border: none;"/></div>
+						  <div class="grand_total" style="display: inline-block; width:90px; font-weight: bold;"></div>
 						 </div> 	  
                     </c:when>                    
                     <c:otherwise>
