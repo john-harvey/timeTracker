@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="httpclient-4.5.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/timeTracker/target/repo/org/apache/httpcomponents/httpclient/4.5.4/httpclient-4.5.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

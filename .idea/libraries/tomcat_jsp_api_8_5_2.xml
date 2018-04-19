@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="tomcat-jsp-api-8.5.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/timeTracker/target/repo/org/apache/tomcat/tomcat-jsp-api/8.5.2/tomcat-jsp-api-8.5.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

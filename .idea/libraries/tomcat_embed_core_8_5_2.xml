@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="tomcat-embed-core-8.5.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/timeTracker/target/repo/org/apache/tomcat/embed/tomcat-embed-core/8.5.2/tomcat-embed-core-8.5.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
