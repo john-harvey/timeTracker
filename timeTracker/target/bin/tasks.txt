@@ -1,55 +1,8 @@
 
-1,CLP II Unbilllable,Town Hall,true
-2,Non Billable,Lunch/breaks,true
-3,CLP II WA14 e-PER Integra,PERI-128 Facility Sites screen not properly validating against Summary/Submit page,false
-4,CLP II WA14 e-PER Integra,PERI-132 Proposed O&M - After first save still get a error on Summary/Submit page,false
-5,CLP II WA14 e-PER Integra,PERI-129 Wholesale - errors when 'No' is selected on WasteWater,false
-6,CLP CO7 RD Apply,RFA analysis,false
-7,CLP CO7 RD Apply,Meetings,true
-8,CLP CO7 RD Apply,misc maintenance,false
-9,CLP CO7 RD Apply,PUR-1770 Electric - Financial Forecast Review - Comments should be required if 'No' is selected for any of the Yes/No questions on the entire Financial Forecast Review pill.,false
-10,CLP TO76 RUS Application,PUR-1772 Electric - Initial Review - Need to be able to un-select a radio button,false
-11,CLP CO7 RD Apply,AIR-2854 Update Subscriber Projections pill to match the historical and proforma years on the other financial screens	,false
-12,CLP CO7 RD Apply,AIR-2029 Facilities/Locations Tab for Telecom Application,false
-13,CLP II WA14 e-PER Integra,PERI-123 Remove Loan Type Validations from Summary,false
-14,CLP TO76 RUS Application,PUR-1837 Telecom - Applicant Letter - Text from Financial and Eng Review are not showing in applicant letter,false
-15,CLP TO76 RUS Application,PUR-1838 Telecom - Director Review/Applicant Letter - Receiving HTTP 500 error when logged in as a Financial BC,false
-16,CLP TO76 RUS Application,PUR-1839 Telecom - Applicant Letter PDF is not properly formatted in Initial Review,false
-17,CLP CO7 RD Apply,AIR-2879 Check Service Availability and Relay Outage messages to the log and user,false
-18,CLP TO76 RUS Application,PUR-1842 RUS ID- New Hampshire 503-G42,false
-19,CLP TO76 RUS Application,PUR-1862 Obligation Specialist Needs to be Limited to 'Request' Only-,false
-20,CLP CO7 RD Apply,ELMS training,false
-21,CLP CO35 WEP,AIR-2848 Balance Sheet re-write for Intake,false
-22,CLP TO76 RUS Application,PUR-1745 Need to Change Formatting on 13600/Eng. Memo Forms,false
-23,CLP TO76 RUS Application,PUR-1898 Excels Needs to Show Agency Changes-PR34604,false
-24,CLP TO76 RUS Application,PUR-1728 Telecom - Loan Summary for Applicant Letter in Initial Review - Pink Error,false
-25,CLP TO76 RUS Application,PUR-1909 Final Review- Choosing Administrator in drop down and saving,false
-26,CLP II WA14 e-PER Integra,PERI-170 PERI - Facilities>Facility Details - Incorrect pink error message showing for Proposed Facility Improvement,false
-27,CLP II WA14 e-PER Integra,PERI-177 PERI - Summary/Submit is not validating against the Drinking Water project type in the Service Area tab,false
-28,CLP II WA14 e-PER Integra,PERI-180 PERI - Change the Green Bar label on the Proposed Funding page. PR# 34539,false
-29,CLP II WA14 e-PER Integra,PERI-188 PERI - View Submitted Application button missing from summary submit,false
-30,CLP II WA14 e-PER Integra,PERI-186 PERI - Summary submit looses red x green checks and expansion plus sign,false
-31,CLP II WA14 e-PER Integra,PERI-185 PERI - Interview recap project cost and service area issue with removing a project type,false
-32,CLP II WA14 e-PER Integra,PERI-179 PERI - SF-424 button is missing from the Summary/Submit Page after submission PR# 34535,false
-33,CLP II WA14 e-PER Integra,PERI-193 PERI - Wholesale page has buggy behavior and then pink error,false
-34,CLP II WA14 e-PER Integra,PERI-194 PERI - Project cost losing project type and cost classification,false
-35,CLP II WA14 e-PER Integra,PERI-195 PERI - unchecking project types with DEBT doesn't clear data from the screen,false
-36,CLP II WA14 e-PER Integra,PERI-200 PERI - Wholesale page duplicated records,false
-37,CLP II WA14 e-PER Integra,PERI-204 PERI - Facility Detail page will not print,false
-38,CLP II WA14 e-PER Integra,PERI-205 Proposed Funding print has "Other Income" in the green bar and Other Funding at the top,false
-39,CLP II WA14 e-PER Integra,PERI-206 Landing page gets pink error trying to open,false
-40,CLP CO7 RD Apply,misc maintenance - Code merging,true
-41,CLP II WA14 e-PER Integra,PERI-202 Short Lived Asset Issues,false
-42,CLP II WA14 e-PER Integra,PERI-210 Proposed O&M issues,false
-43,CLP II WA14 e-PER Integra,PERI-211 Summary Submit page doesn't have the View Submitted Application button,false
-44,CLP CO7 RD Apply,misc maintenance - Local workspace administration,true
-45,CLP II WA14 e-PER Integra,PERI-221 View Submitted Application print has incorrect and missing data,true
-46,CLP II WA14 e-PER Integra,PERI-199 Proposed Funding page is wiping out entered data,false
-47,CLP CO7 RD Apply,AIR-2936 Clear/Delete Submitted Application PDF for Resubmitted application,false
-48,CLP CO7 RD Apply,misc maintenance - time sheets,true
-49,CLP II WA14 e-PER Integra,PERI-224 Facility type congressional district and county sometimes do not print in the SF 424 for Facility Sites,false
-50,CLP II WA14 e-PER Integra,PERI-226 Project Cost and Project Schedule pages are not included in SF424 print,true
-51,CLP CO7 RD Apply,misc maintenance - password reset/user account management,true
-52,CLP CO7 RD Apply,AIR-2848 Balance Sheet re-write for Intake,true
-53,On Hold For Charge Info,logging hours,true
-54,CLP CO7 RD Apply,annual security awareness training,false
+1,C-ES17-Lab Bundling Re-Platform,BUN: Contractor Ramp-up Time,true
+2,C-ES17-Lab Bundling Re-Platform,CDR-204 review ehp Processing code review,true
+3,C-ES17-Lab Bundling Re-Platform,BUN-13 Review documentation,true
+4,C - ES16 CDR Security Enhancements,CESP,true
+5,C-ES17-Lab Bundling Re-Platform,BUN: set up project in IDE,true
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true
+7,	C-ES17-Lab Bundling Re-Platform,BUN-71 Configure the project for SpringBatch,true
