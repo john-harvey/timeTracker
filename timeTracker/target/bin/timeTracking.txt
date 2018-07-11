@@ -9,6 +9,7 @@
 1,C-ES17-Lab Bundling Re-Platform,BUN: Contractor Ramp-up Time,true,2018-04-11T14:07:55.069,2018-04-11T15:13:22.880
 3,C-ES17-Lab Bundling Re-Platform,BUN-13 Review documentation,true,2018-04-11T15:13:22.881,2018-04-11T16:06:12.066
 1,C-ES17-Lab Bundling Re-Platform,BUN: Contractor Ramp-up Time,true,2018-04-12T08:30,2018-04-12T16:27:06.075
+1,C-ES17-Lab Bundling Re-Platform,BUN: Contractor Ramp-up Time,true,2018-04-13T08:00,2018-04-13T16:00:00.075
 1,C-ES17-Lab Bundling Re-Platform,BUN: Contractor Ramp-up Time,true,2018-04-16T08:00:00.000,2018-04-16T08:32:06.903
 5,C-ES17-Lab Bundling Re-Platform,BUN: set up project in IDE,true,2018-04-16T08:32:06.969,2018-04-16T14:33:03.647
 6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-16T14:33:03.636,2018-04-16T15:58:02.825
@@ -16,5 +17,114 @@
 6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-17T07:15:24.996,2018-04-17T15:01:38.572
 6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-18T07:00:00.000,2018-04-18T07:40:58.219
 6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-18T07:40:59.436,2018-04-18T10:54:30.834
-7,	C-ES17-Lab Bundling Re-Platform,BUN-71 Configure the project for SpringBatch,true,2018-04-18T10:54:30.834,2018-04-18T14:59:00.039
-7,	C-ES17-Lab Bundling Re-Platform,BUN-71 Configure the project for SpringBatch,true,2018-04-19T07:00:00.000,2018-04-19T07:18:41.455
+7,C-ES17-Lab Bundling Re-Platform,BUN-71 Configure the project for SpringBatch,true,2018-04-18T10:54:30.834,2018-04-18T14:59:00.039
+7,C-ES17-Lab Bundling Re-Platform,BUN-71 Configure the project for SpringBatch,true,2018-04-19T07:00:00.000,2018-04-19T13:44:07.498
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-19T13:44:07.498,2018-04-19T14:55:08.119
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-20T07:00:00.000,2018-04-20T07:11:11.807
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-20T07:11:13.869,2018-04-20T15:03:18.922
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-23T07:00:00.000,2018-04-23T11:37:06.345
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-23T11:37:06.107,2018-04-23T15:00:17.490
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-24T07:00:00.000,2018-04-24T07:32:22.655
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-24T07:32:23.410,2018-04-24T10:22:10.339
+8,C-ES17-Lab Bundling Re-Platform,BUN-24 Create Charge Hold process WorkItems,true,2018-04-24T10:22:10.340,2018-04-24T11:25:31.987
+8,C-ES17-Lab Bundling Re-Platform,BUN-24 Create Charge Hold process WorkItems,true,2018-04-24T11:25:34.254,2018-04-24T15:22:16.166
+8,C-ES17-Lab Bundling Re-Platform,BUN-24 Create Charge Hold process WorkItems,true,2018-04-25T07:00:00.000,2018-04-25T07:19:33.390
+8,C-ES17-Lab Bundling Re-Platform,BUN-24 Create Charge Hold process WorkItems,true,2018-04-25T07:19:34.455,2018-04-25T09:50:22.213
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-25T09:50:22.212,2018-04-25T15:11:04.003
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-26T07:00:00.000,2018-04-26T07:12:55.339
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-26T07:12:57.855,2018-04-26T15:08:56.318
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-27T07:00:00.000,2018-04-27T08:06:16.832
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-27T08:06:18.917,2018-04-27T15:06:00.000
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-30T07:00:00.000,2018-04-30T07:28:59.634
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-04-30T07:29:00.745,2018-04-30T14:52:28.375
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-05-01T06:57:09.712,2018-05-01T12:41:35.688
+8,C-ES17-Lab Bundling Re-Platform,BUN-24 Create Charge Hold process WorkItems,true,2018-05-01T12:41:35.688,2018-05-01T14:58:08.783
+9,C-ES17-Lab Bundling Re-Platform,BUN-23 Create Charge Hold process WorkManager,true,2018-05-02T08:30:00.000,2018-05-02T08:56:35.381
+9,C-ES17-Lab Bundling Re-Platform,BUN-23 Create Charge Hold process WorkManager,true,2018-05-02T08:56:36.587,2018-05-02T11:51:51.350
+8,C-ES17-Lab Bundling Re-Platform,BUN-24 Create Charge Hold process WorkItems,true,2018-05-02T11:51:51.350,2018-05-02T15:36:15.408
+8,C-ES17-Lab Bundling Re-Platform,BUN-24 Create Charge Hold process WorkItems,true,2018-05-03T06:30:00.000,2018-05-03T06:50:48.253
+8,C-ES17-Lab Bundling Re-Platform,BUN-24 Create Charge Hold process WorkItems,true,2018-05-03T06:50:49.462,2018-05-03T15:13:41.607
+9,C-ES17-Lab Bundling Re-Platform,BUN-23 Create Charge Hold process WorkManager,true,2018-05-04T07:00:00.000,2018-05-04T07:36:08.167
+9,C-ES17-Lab Bundling Re-Platform,BUN-23 Create Charge Hold process WorkManager,true,2018-05-04T07:36:09.584,2018-05-04T09:30:54.018
+9,C-ES17-Lab Bundling Re-Platform,BUN-23 Create Charge Hold process WorkManager,true,2018-05-04T09:32:18.842,2018-05-04T09:37:29.140
+9,C-ES17-Lab Bundling Re-Platform,BUN-23 Create Charge Hold process WorkManager,true,2018-05-04T09:37:29.140,2018-05-04T11:19:28.307
+9,C-ES17-Lab Bundling Re-Platform,BUN-23 Create Charge Hold process WorkManager,true,2018-05-04T11:19:28.307,2018-05-04T11:42:40.226
+9,C-ES17-Lab Bundling Re-Platform,BUN-23 Create Charge Hold process WorkManager,true,2018-05-04T11:42:42.123,2018-05-04T14:50:56.111
+9,C-ES17-Lab Bundling Re-Platform,BUN-23 Create Charge Hold process WorkManager,true,2018-05-07T07:00:00.000,2018-05-07T07:14:59.476
+9,C-ES17-Lab Bundling Re-Platform,BUN-23 Create Charge Hold process WorkManager,true,2018-05-07T07:15:05.111,2018-05-07T12:14:21.139
+10,	C-ES17-Lab Bundling Re-Platform,BUN-74  Create a Charges test class for unit and integration testing of work items,true,2018-05-07T12:14:21.139,2018-05-07T15:01:56.994
+10,	C-ES17-Lab Bundling Re-Platform,BUN-74  Create a Charges test class for unit and integration testing of work items,true,2018-05-08T07:01:35.581,2018-05-08T14:57:48.197
+10,	C-ES17-Lab Bundling Re-Platform,BUN-74  Create a Charges test class for unit and integration testing of work items,true,2018-05-09T07:00:53.813,2018-05-09T15:17:05.581
+10,	C-ES17-Lab Bundling Re-Platform,BUN-74  Create a Charges test class for unit and integration testing of work items,true,2018-05-10T06:55:58.718,2018-05-10T15:09:21.392
+10,	C-ES17-Lab Bundling Re-Platform,BUN-74  Create a Charges test class for unit and integration testing of work items,true,2018-05-11T07:26:54.737,2018-05-11T14:51:11.812
+10,	C-ES17-Lab Bundling Re-Platform,BUN-74  Create a Charges test class for unit and integration testing of work items,true,2018-05-14T07:02:24.827,2018-05-14T15:23:03.335
+10,	C-ES17-Lab Bundling Re-Platform,BUN-74  Create a Charges test class for unit and integration testing of work items,true,2018-05-15T07:24:27.663,2018-05-15T09:54:41.125
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true,2018-05-15T09:54:41.125,2018-05-15T13:48:59.469
+10,	C-ES17-Lab Bundling Re-Platform,BUN-74  Create a Charges test class for unit and integration testing of work items,true,2018-05-15T13:48:59.467,2018-05-15T15:24:09.192
+11,C-ES17-Lab Bundling Re-Platform,BUN-75 Create charge file verification logic,true,2018-05-16T07:09:41.125,2018-05-16T15:10:29.916
+11,C-ES17-Lab Bundling Re-Platform,BUN-75 Create charge file verification logic,true,2018-05-17T07:00:00.000,2018-05-17T07:28:34.602
+11,C-ES17-Lab Bundling Re-Platform,BUN-75 Create charge file verification logic,true,2018-05-17T07:28:36.157,2018-05-17T15:02:09.919
+11,C-ES17-Lab Bundling Re-Platform,BUN-75 Create charge file verification logic,true,2018-05-21T07:00:00.086,2018-05-21T07:14:56.638
+11,C-ES17-Lab Bundling Re-Platform,BUN-75 Create charge file verification logic,true,2018-05-21T07:14:58.660,2018-05-21T15:19:00.276
+11,C-ES17-Lab Bundling Re-Platform,BUN-75 Create charge file verification logic,true,2018-05-22T06:00:00.455,2018-05-22T10:38:23.299
+12,C-ES17-Lab Bundling Re-Platform,BUN-33 Implement Notifications,true,2018-05-22T10:38:23.299,2018-05-22T13:35:13.927
+11,C-ES17-Lab Bundling Re-Platform,BUN-75 Create charge file verification logic,true,2018-05-22T13:35:13.927,2018-05-22T15:34:34.354
+12,C-ES17-Lab Bundling Re-Platform,BUN-33 Implement Notifications,true,2018-05-23T06:00:00.501,2018-05-23T06:46:58.442
+12,C-ES17-Lab Bundling Re-Platform,BUN-33 Implement Notifications,true,2018-05-23T06:46:59.807,2018-05-23T15:14:48.722
+12,C-ES17-Lab Bundling Re-Platform,BUN-33 Implement Notifications,true,2018-05-24T06:02:41.207,2018-05-24T15:01:13.962
+12,C-ES17-Lab Bundling Re-Platform,BUN-33 Implement Notifications,true,2018-05-25T05:56:48.420,2018-05-25T14:54:04.591
+12,C-ES17-Lab Bundling Re-Platform,BUN-33 Implement Notifications,true,2018-05-29T06:00:00.447,2018-05-29T06:16:31.091
+12,C-ES17-Lab Bundling Re-Platform,BUN-33 Implement Notifications,true,2018-05-29T06:16:34.239,2018-05-29T11:52:36.914
+13,C-ES17-Lab Bundling Re-Platform,BUN-76 extract notification properties into templates that can be maintained in the db,true,2018-05-29T11:53:00.762,2018-05-29T15:06:18.017
+13,C-ES17-Lab Bundling Re-Platform,BUN-76 extract notification properties into templates that can be maintained in the db,true,2018-05-30T06:00:00.620,2018-05-30T15:00:18.902
+13,C-ES17-Lab Bundling Re-Platform,BUN-76 extract notification properties into templates that can be maintained in the db,true,2018-05-31T06:00:00.924,2018-05-31T10:35:06.453
+14,C-ES17-Lab Bundling Re-Platform,BUN: Developers Unit Testing and Code Reviews,true,2018-05-31T10:35:06.452,2018-05-31T10:52:59.939
+15,	C-ES17-Lab Bundling Re-Platform,BUN-77 Create the conversion of Soarian extract file into DB2 table,true,2018-05-31T10:52:59.939,2018-05-31T15:00:44.282
+13,C-ES17-Lab Bundling Re-Platform,BUN-76 extract notification properties into templates that can be maintained in the db,true,2018-06-04T07:00:00.547,2018-06-04T09:54:30.512
+15,	C-ES17-Lab Bundling Re-Platform,BUN-77 Create the conversion of Soarian extract file into DB2 table,true,2018-06-04T09:54:30.510,2018-06-04T15:02:17.078
+15,	C-ES17-Lab Bundling Re-Platform,BUN-77 Create the conversion of Soarian extract file into DB2 table,true,2018-06-05T07:00:00.000,2018-06-05T10:46:23.190
+13,C-ES17-Lab Bundling Re-Platform,BUN-76 extract notification properties into templates that can be maintained in the db,true,2018-06-05T10:46:23.191,2018-06-05T15:06:18.065
+13,C-ES17-Lab Bundling Re-Platform,BUN-76 extract notification properties into templates that can be maintained in the db,true,2018-06-06T07:00:00.617,2018-06-06T07:23:47.669
+13,C-ES17-Lab Bundling Re-Platform,BUN-76 extract notification properties into templates that can be maintained in the db,true,2018-06-06T07:23:49.415,2018-06-06T09:12:22.843
+14,C-ES17-Lab Bundling Re-Platform,BUN: Developers Unit Testing and Code Reviews,true,2018-06-06T09:12:22.842,2018-06-06T10:45:01.232
+13,C-ES17-Lab Bundling Re-Platform,BUN-76 extract notification properties into templates that can be maintained in the db,true,2018-06-06T10:45:01.231,2018-06-06T13:16:25.677
+14,C-ES17-Lab Bundling Re-Platform,BUN: Developers Unit Testing and Code Reviews,true,2018-06-06T13:16:25.676,2018-06-06T14:56:47.797
+14,C-ES17-Lab Bundling Re-Platform,BUN: Developers Unit Testing and Code Reviews,true,2018-06-07T07:12:41.619,2018-06-07T11:11:48.614
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-07T11:11:48.612,2018-06-07T14:57:27.819
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-08T07:16:27.902,2018-06-08T15:18:24.767
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-11T07:00:00.150,2018-06-11T07:13:12.716
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-11T07:13:15.568,2018-06-11T15:03:20.039
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-12T07:00,2018-06-12T14:16:09.533
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-12T14:16:11.850,2018-06-12T15:03:10.679
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-13T07:06:42.848,2018-06-13T15:00:45.850
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-14T07:00:00.000,2018-06-14T07:30:02.577
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-14T07:30:03.899,2018-06-14T14:52:54.414
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-15T07:00:50.986,2018-06-15T15:13:10.587
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-18T07:00:00.985,2018-06-18T07:16:06.251
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-18T07:16:07.848,2018-06-18T15:00:56.778
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-19T07:05:38.569,2018-06-19T15:04:49.738
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-20T07:00:00.940,2018-06-20T15:01:38.754
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-21T07:09:08.534,2018-06-21T16:58:59.404
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-22T07:37:40.412,2018-06-22T14:03:22.872
+20,C-ES17-Lab Bundling Re-Platform,BUN: Downtime due to PC Crash,true,2018-06-25T07:00:00.259,2018-06-25T15:00:00.509
+20,C-ES17-Lab Bundling Re-Platform,BUN: Downtime due to PC Crash,true,2018-06-26T07:00:00.819,2018-06-26T11:00:00.527
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-26T11:00:00.436,2018-06-26T13:00:00.526
+19,C-ES17-Lab Bundling Re-Platform,BUN-35 Before and After Report Services,true,2018-06-26T13:00:00.083,2018-06-26T15:00:00.267
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-27T07:00:00.436,2018-06-27T11:00:00.526
+19,C-ES17-Lab Bundling Re-Platform,BUN-35 Before and After Report Services,true,2018-06-27T11:00:00.083,2018-06-27T15:00:00.267
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,true,2018-06-28T07:00:00.436,2018-06-28T09:00:00.526
+19,C-ES17-Lab Bundling Re-Platform,BUN-35 Before and After Report Services,true,2018-06-28T09:00:00.083,2018-06-28T15:00:00.267
+19,C-ES17-Lab Bundling Re-Platform,BUN-35 Before and After Report Services,true,2018-06-29T08:06:48.335,2018-06-29T16:30:09.270
+19,C-ES17-Lab Bundling Re-Platform,BUN-35 Before and After Report Services,true,2018-07-02T07:00:03.367,2018-07-02T11:00:00.600
+21,	C-ES17-Lab Bundling Re-Platform,BUN: Project Team Meetings (includes Business Team and Stakeholders),true,2018-07-02T11:00:00.249,2018-07-02T11:40:00.029
+19,C-ES17-Lab Bundling Re-Platform,BUN-35 Before and After Report Services,true,2018-07-02T11:40:00.367,2018-07-02T14:58:26.600
+17,C-ES17-Lab Bundling Re-Platform,BUN-37 Before and After Report Layout and Distribution,true,2018-07-03T07:00:16.913,2018-07-03T07:17:24.249
+17,C-ES17-Lab Bundling Re-Platform,BUN-37 Before and After Report Layout and Distribution,true,2018-07-03T07:17:29.909,2018-07-03T15:03:41.889
+17,C-ES17-Lab Bundling Re-Platform,BUN-37 Before and After Report Layout and Distribution,true,2018-07-04T07:26:42.230,2018-07-04T15:00:10.614
+17,C-ES17-Lab Bundling Re-Platform,BUN-37 Before and After Report Layout and Distribution,true,2018-07-05T09:07:34.940,2018-07-05T15:21:41.717
+17,C-ES17-Lab Bundling Re-Platform,BUN-37 Before and After Report Layout and Distribution,true,2018-07-06T07:01:17.400,2018-07-06T14:30:44.182
+21,	C-ES17-Lab Bundling Re-Platform,BUN: Project Team Meetings (includes Business Team and Stakeholders),true,2018-07-06T14:30:50.368,2018-07-06T15:37:08.490
+17,C-ES17-Lab Bundling Re-Platform,BUN-37 Before and After Report Layout and Distribution,true,2018-07-06T15:37:08.490,2018-07-06T16:19:14.243
+17,C-ES17-Lab Bundling Re-Platform,BUN-37 Before and After Report Layout and Distribution,true,2018-07-09T07:00:00.508,2018-07-09T14:55:15.265
+17,C-ES17-Lab Bundling Re-Platform,BUN-37 Before and After Report Layout and Distribution,true,2018-07-10T07:00:00.346,2018-07-10T15:04:08.970
+17,C-ES17-Lab Bundling Re-Platform,BUN-37 Before and After Report Layout and Distribution,true,2018-07-11T06:58:59.445,2018-07-11T15:12:07.526

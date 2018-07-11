@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import org.apache.http.HttpResponse;
@@ -23,13 +25,17 @@ public class Tracker extends SavedData {
 	
 	public int updateJira(Task task) {
 	    int returnStatus = 0;
-		String jiraTaskValue = task.getJiraTask().substring(0, task.getJiraTask().contains("-")?task.getJiraTask().contains(" ")?task.getJiraTask().indexOf(" "):task.getJiraTask().length():0);
+//		String jiraTaskValue = task.getJiraTask().substring(0, task.getJiraTask().contains("-")?task.getJiraTask().contains(" ")?task.getJiraTask().indexOf(" "):task.getJiraTask().length():0);
+		Pattern p = Pattern.compile("^([A-Za-z0-9]+(-[0-9]+ ))");
+		Matcher m = p.matcher(task.getJiraTask());
+		String jiraTaskValue = m.find()?m.group(1).trim():"";
+
 		if(null != jiraTaskValue && !"".equals(jiraTaskValue)) {
 			CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
-			UsernamePasswordCredentials credentials = new UsernamePasswordCredentials("<username>", "<passowrd>");
+			UsernamePasswordCredentials credentials = new UsernamePasswordCredentials("jharvey", "August112003");
 			credentialsProvider.setCredentials(AuthScope.ANY, credentials);
 		    HttpClient client =  HttpClientBuilder.create().setDefaultCredentialsProvider(credentialsProvider).build();
-		    HttpPost httpPost = new HttpPost("https://gcjiramain.unisysdevops.com/rest/api/2/issue/"+jiraTaskValue+"/worklog");
+		    HttpPost httpPost = new HttpPost("http://bjcjira/rest/api/2/issue/"+jiraTaskValue+"/worklog");
 		    String json = "{\"started\":\""+task.getStart()+"\",\"timeSpent\":\""+task.getTimeSpent()+"m\"}";
 	
 		    try {
@@ -55,32 +61,32 @@ public class Tracker extends SavedData {
 	}
 	
 	public static List<Task> getAllTracked() {
-		System.out.println(LocalDateTime.now().format(formatter)+" entering Tracker.getAllTracked");
-		System.out.println(LocalDateTime.now().format(formatter)+" calling Tracker.rebuildTracked, using timeTracking.txt");
+//		System.out.println(LocalDateTime.now().format(formatter)+" entering Tracker.getAllTracked");
+//		System.out.println(LocalDateTime.now().format(formatter)+" calling Tracker.rebuildTracked, using timeTracking.txt");
 		return rebuildTracked(parseFile());
 	}
 	
 	public static List<Task> getAllTracked(List<Task> seed) {
-		System.out.println(LocalDateTime.now().format(formatter)+" entering Tracker.getAllTracked");
+//		System.out.println(LocalDateTime.now().format(formatter)+" entering Tracker.getAllTracked");
 		List<Task> combined = new ArrayList<Task>(seed);
-		System.out.println(LocalDateTime.now().format(formatter)+" calling Tracker.parseFile, using timeTracker.txt");
+//		System.out.println(LocalDateTime.now().format(formatter)+" calling Tracker.parseFile, using timeTracker.txt");
 		combined.addAll(parseFile());
-		System.out.println(LocalDateTime.now().format(formatter)+" calling Tracker.rebuildTracked, using combined task list");
+//		System.out.println(LocalDateTime.now().format(formatter)+" calling Tracker.rebuildTracked, using combined task list");
 		return rebuildTracked(combined);
 	}
 
 	private static List<Task> parseFile() {
-		System.out.println(LocalDateTime.now().format(formatter)+" entering Tracker.parseFile");
-		System.out.println(LocalDateTime.now().format(formatter)+" calling SavedData.loadTasks, using timeTracker.txt");
+//		System.out.println(LocalDateTime.now().format(formatter)+" entering Tracker.parseFile");
+//		System.out.println(LocalDateTime.now().format(formatter)+" calling SavedData.loadTasks, using timeTracker.txt");
 		return loadTasks(TIME_TRACKING_TXT);
 	}
 	
 	private static List<Task> rebuildTracked(List<Task> src) {
 		//src.stream().map(Task::saveString).distinct().forEach(System.out::println);
-		System.out.println(LocalDateTime.now().format(formatter)+" entering Tracker.rebuildTracked");
-		System.out.println(LocalDateTime.now().format(formatter)+" creating new task list from streamed file");
+//		System.out.println(LocalDateTime.now().format(formatter)+" entering Tracker.rebuildTracked");
+//		System.out.println(LocalDateTime.now().format(formatter)+" creating new task list from streamed file");
 		List<Task> tasks= src.stream().map(Task::saveString).distinct().map(s -> s.split(DELIM)).map(Task::new).collect(Collectors.toList());
-		System.out.println(LocalDateTime.now().format(formatter)+" exiting Tracker.rebuildTracked");
+//		System.out.println(LocalDateTime.now().format(formatter)+" exiting Tracker.rebuildTracked");
 		return tasks;
 	}	
 
@@ -89,16 +95,16 @@ public class Tracker extends SavedData {
 	}
 	
 	public List<Task> getSavedTasks() {
-		System.out.println(LocalDateTime.now().format(formatter)+" entering Tracker.getSavedTasks");
-		System.out.println(LocalDateTime.now().format(formatter)+" calling Tracker.parseFile, using timeTracker.txt");		
+//		System.out.println(LocalDateTime.now().format(formatter)+" entering Tracker.getSavedTasks");
+//		System.out.println(LocalDateTime.now().format(formatter)+" calling Tracker.parseFile, using timeTracker.txt");
 		return parseFile();
 	}
 
 	public void stopTask(Task task) {
 		if (task != null) {	
 			writeToFile(task, TIME_TRACKING_TXT, task::toString);
-			//int updateStatus = updateJira(task);
-			//System.out.println(LocalDateTime.now().format(formatter)+" jira update status: "+updateStatus);
+			int updateStatus = updateJira(task);
+			System.out.println(LocalDateTime.now().format(formatter)+" jira update status: "+updateStatus);
 			tasks = getSavedTasks();
 		}
 	}

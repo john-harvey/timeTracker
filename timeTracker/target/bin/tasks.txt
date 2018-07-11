@@ -1,8 +1,22 @@
 
-1,C-ES17-Lab Bundling Re-Platform,BUN: Contractor Ramp-up Time,true
-2,C-ES17-Lab Bundling Re-Platform,CDR-204 review ehp Processing code review,true
-3,C-ES17-Lab Bundling Re-Platform,BUN-13 Review documentation,true
-4,C - ES16 CDR Security Enhancements,CESP,true
-5,C-ES17-Lab Bundling Re-Platform,BUN: set up project in IDE,true
-6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,true
-7,	C-ES17-Lab Bundling Re-Platform,BUN-71 Configure the project for SpringBatch,true
+1,C-ES17-Lab Bundling Re-Platform,BUN: Contractor Ramp-up Time,false
+2,C-ES17-Lab Bundling Re-Platform,CDR-204 review ehp Processing code review,false
+3,C-ES17-Lab Bundling Re-Platform,BUN-13 Review documentation,false
+4,C-ES16 CDR Security Enhancements,CESP,true
+5,C-ES17-Lab Bundling Re-Platform,BUN: set up project in IDE,false
+6,C-ES17-Lab Bundling Re-Platform,BUN-31 Create the conversion of charge file into DB2 table,false
+7,C-ES17-Lab Bundling Re-Platform,BUN-71 Configure the project for SpringBatch,false
+8,C-ES17-Lab Bundling Re-Platform,BUN-24 Create Charge Hold process WorkItems,false
+9,C-ES17-Lab Bundling Re-Platform,BUN-23 Create Charge Hold process WorkManager,false
+10,C-ES17-Lab Bundling Re-Platform,BUN-74  Create a Charges test class for unit and integration testing of work items,false
+11,C-ES17-Lab Bundling Re-Platform,BUN-75 Create charge file verification logic,false
+12,C-ES17-Lab Bundling Re-Platform,BUN-33 Implement Notifications,false
+13,C-ES17-Lab Bundling Re-Platform,BUN-76 extract notification properties into templates that can be maintained in the db,false
+14,C-ES17-Lab Bundling Re-Platform,BUN: Developers Unit Testing and Code Reviews,true
+15,	C-ES17-Lab Bundling Re-Platform,BUN-77 Create the conversion of Soarian extract file into DB2 table,false
+16,C-ES17-Lab Bundling Re-Platform,BUN-34 Report Distribution,false
+17,C-ES17-Lab Bundling Re-Platform,BUN-37 Before and After Report Layout and Distribution,true
+18,C-ES17-Lab Bundling Re-Platform,BUN-78 Connect in-memory profile to db2 datasource for persisting hold data,true
+19,C-ES17-Lab Bundling Re-Platform,BUN-35 Before and After Report Services,true
+20,C-ES17-Lab Bundling Re-Platform,BUN: Downtime due to PC Crash,false
+21,	C-ES17-Lab Bundling Re-Platform,BUN: Project Team Meetings (includes Business Team and Stakeholders),true

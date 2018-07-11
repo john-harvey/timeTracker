@@ -93,7 +93,7 @@ public class Task implements Comparable<Task> {
 		Pattern p = Pattern.compile("^([A-Za-z0-9]+(-[0-9]+ ))");
 		Matcher m = p.matcher(jiraTask);
 		String jiraTaskValue = m.find()?m.group(1):"";
-		System.out.println("jiraTaskValue from regex: "+jiraTaskValue);
+//		System.out.println("jiraTaskValue from regex: "+jiraTaskValue);
 		if(null != jiraTaskValue && !"".equals(jiraTaskValue)) {
 			linkValue=JIRA_URL_BASE+jiraTaskValue;
 //			boolean isInvalidTask = false;
